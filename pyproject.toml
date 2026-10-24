@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-kreative-moss"
+description = "Nodes and a ready-to-run workflow for the Moss image model: image size with focal-length selector, auto-growing multi-prompter, panoramic XPan/Widelux lenses, look selector, timers."
+version = "0.3.0"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Lo-res/ComfyUI-Kreative-Moss"
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "Kreative Moss"
+Icon = ""

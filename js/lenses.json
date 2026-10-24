@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "long_sides": [
+    768,
+    1024,
+    1152,
+    1344,
+    1536,
+    1632,
+    1728,
+    1920,
+    2304,
+    2560
+  ],
+  "ratios": [
+    "1:1",
+    "16:9",
+    "9:16",
+    "2:1",
+    "3:2",
+    "2:3",
+    "4:3",
+    "3:4",
+    "4:5",
+    "65:24",
+    "3:1"
+  ],
+  "focal_lengths": [
+    {
+      "id": "Off",
+      "label": "Off",
+      "short": "",
+      "prompt": "",
+      "perspective": "No lens text is added to the prompt.",
+      "field_of_view": "The prompt writer and the look decide the framing.",
+      "ratio": "",
+      "crop_note": "Pick any ratio yourself."
+    },
+    {
+      "id": "8mm",
+      "label": "8mm fisheye",
+      "short": "shot with an 8mm fisheye lens",
+      "prompt": "Shot with an 8mm full-frame fisheye lens: an ultra-wide field of view of about 180 degrees with strong barrel distortion, straight lines bowing outward into curves, the subject exaggerated and enlarged at the centre of the frame while the surroundings wrap around the edges.",
+      "short_circular": "shot with an 8mm circular fisheye lens",
+      "prompt_circular": "Shot with an 8mm circular fisheye lens: the entire scene is captured as a round 180 degree image circle surrounded by black corners, with intense spherical distortion and horizon lines curving into arcs.",
+      "perspective": "Extreme fisheye distortion: straight lines bow outward into curves and the subject swells large at the centre.",
+      "field_of_view": "Ultra-wide, about 180 degrees: the whole surroundings wrap around the edges of the frame.",
+      "ratio": "3:2",
+      "ratio_circular": "1:1",
+      "crop_note": "A full-frame fisheye fills the whole 3:2 frame. A circular fisheye needs a 1:1 frame."
+    },
+    {
+      "id": "16mm",
+      "label": "16mm",
+      "short": "shot with a 16mm focal length lens",
+      "prompt": "Shot with a 16mm focal length lens: a very wide field of view with dramatic perspective, converging lines and strong depth between a large foreground and a distant background, the surrounding environment fully visible around the subject.",
+      "perspective": "Dramatic wide-angle perspective: converging lines and a strong sense of depth between foreground and background.",
+      "field_of_view": "Very wide: takes in the whole environment around the subject.",
+      "ratio": "3:2",
+      "crop_note": "3:2 is the native full-frame crop for wide lenses."
+    },
+    {
+      "id": "24mm",
+      "label": "24mm",
+      "short": "shot with a 24mm focal length lens",
+      "prompt": "Shot with a 24mm focal length lens: a wide field of view with generous environmental context, gentle perspective exaggeration and an open sense of space around the subject.",
+      "perspective": "Wide, spacious perspective with mild exaggeration of depth.",
+      "field_of_view": "Wide: generous environmental context around the subject.",
+      "ratio": "3:2",
+      "crop_note": "3:2 is the native full-frame crop for wide lenses."
+    },
+    {
+      "id": "35mm",
+      "label": "35mm",
+      "short": "shot with a 35mm focal length lens",
+      "prompt": "Shot with a 35mm focal length lens: a classic documentary field of view slightly wider than the human eye, natural perspective with the setting clearly visible around the subject and gentle depth.",
+      "perspective": "Classic reportage look: close to natural, with a touch of extra width.",
+      "field_of_view": "Slightly wider than the human eye: the subject sits within a clearly visible setting.",
+      "ratio": "3:2",
+      "crop_note": "3:2 is the native full-frame crop."
+    },
+    {
+      "id": "50mm",
+      "label": "50mm",
+      "short": "shot with a 50mm focal length lens",
+      "prompt": "Shot with a 50mm focal length lens: a natural perspective matching the human field of view, with straight lines, true-to-life proportions and a realistically sized background behind the subject.",
+      "perspective": "Matches a natural human field of view with little to no distortion.",
+      "field_of_view": "Keeps the background in a realistic, proportional size to the subject.",
+      "ratio": "3:2",
+      "crop_note": "3:2 is the native full-frame crop. Use the swap option for a vertical frame."
+    },
+    {
+      "id": "85mm",
+      "label": "85mm",
+      "short": "shot with an 85mm focal length lens",
+      "prompt": "Shot with an 85mm focal length lens: a flattering portrait perspective with natural facial proportions, a narrow field of view that gently compresses the background and a softly blurred backdrop with smooth bokeh.",
+      "perspective": "Flattering portrait perspective with natural facial proportions.",
+      "field_of_view": "Narrow: gently compresses the background and isolates the subject.",
+      "ratio": "4:5",
+      "crop_note": "4:5 is the classic portrait crop."
+    },
+    {
+      "id": "135mm",
+      "label": "135mm",
+      "short": "shot with a 135mm focal length lens",
+      "prompt": "Shot with a 135mm telephoto focal length lens: a tight field of view with strong background compression, distant elements stacked close behind the subject, a flattened perspective and a heavily blurred backdrop with smooth creamy bokeh.",
+      "perspective": "Telephoto compression: a flattened perspective that stacks distant elements close behind the subject.",
+      "field_of_view": "Tight: isolates the subject against a heavily blurred background.",
+      "ratio": "2:3",
+      "crop_note": "2:3 is a tall, tight portrait crop."
+    },
+    {
+      "id": "XPan",
+      "label": "XPan 45mm (panoramic)",
+      "short": "shot on a Hasselblad XPan panoramic camera",
+      "prompt": "Shot on a Hasselblad XPan panoramic rangefinder with a 45mm lens on a 65x24mm frame: an ultra-wide cinematic panoramic letterbox view, straight undistorted rectilinear lines, a wide horizontal field of view with natural perspective, gentle light fall-off and soft vignetting towards the far left and right edges, the scene stretched wide around the subject like a film still.",
+      "perspective": "Rectilinear and natural: straight lines stay straight, no fisheye bending.",
+      "field_of_view": "Very wide side to side (about like a 25mm lens), normal top to bottom: a cinematic letterbox.",
+      "ratio": "65:24",
+      "fixed_ratio": true,
+      "crop_note": "Fixed 65:24 panorama, always horizontal. Pick a big size (2304 or 2560) so the height isn't tiny."
+    },
+    {
+      "id": "Widelux",
+      "label": "Widelux 26mm (swing lens)",
+      "short": "shot on a Widelux swing-lens panoramic camera",
+      "prompt": "Shot on a Widelux swing-lens panoramic camera: a sweeping 140-degree horizontal field of view captured by a rotating 26mm lens, straight horizontal lines above and below the centre bowing into gentle curves, vertical lines staying upright, objects near the left and right edges slightly stretched, subtle uneven exposure bands across the frame, a sharp centre and an immersive wraparound panoramic view.",
+      "perspective": "Swing lens: horizontal lines away from the centre bow into curves, verticals stay straight.",
+      "field_of_view": "About 140 degrees side to side: the scene wraps around the viewer.",
+      "ratio": "3:1",
+      "fixed_ratio": true,
+      "crop_note": "Fixed 3:1 panorama, always horizontal. Pick a big size (2304 or 2560) so the height isn't tiny."
+    }
+  ]
+}
