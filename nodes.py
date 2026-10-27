@@ -96,7 +96,7 @@ class KreativePromptMulti:
         return {
             "required": {
                 "selection_mode": (
-                    ["Single Active (Radio)", "Combine All ON Rows"],
+                    ["Single Active (Radio)", "Combine All ON Rows", "One image per ON row"],
                     {"default": "Single Active (Radio)"}
                 ),
                 "delimiter": ("STRING", {"default": " ", "multiline": False}),
@@ -148,7 +148,9 @@ class KreativePromptMulti:
         if not enabled_texts:
             return ("", "")
 
-        if selection_mode == "Single Active (Radio)":
+        # "One image per ON row": pressing Run queues one run per ON row (js/kreative_promptmulti.js),
+        # so each run arrives here with a single row ON. If several do arrive (e.g. via the API), use the first.
+        if selection_mode in ("Single Active (Radio)", "One image per ON row"):
             final_text = enabled_texts[0]
         else:
             sep = delimiter.replace("\\n", "\n") if delimiter else "\n\n"

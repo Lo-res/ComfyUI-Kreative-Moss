@@ -12,9 +12,56 @@ const DEFAULT_ROWS = [
 ];
 
 const MIN_WIDTH = 520;
+const ONE_PER_ROW = "One image per ON row";
+
+// One image per ON row: when Run is pressed with 1a in this mode and several rows ON,
+// queue one run per row (each run sees only that row ON), then put the rows back.
+function pendingRows() {
+    const nodes = app.graph?._nodes || app.graph?.nodes || [];
+    // AI writer OFF (1n): 1a rows are not used, so don't multiply runs.
+    if (nodes.some((n) => n.type === "KreativeMyPrompt" && n.mode === 0 &&
+        n.widgets?.find((x) => x.name === "AI prompt writer")?.value === false)) return null;
+    for (const n of nodes) {
+        if (n.type !== "KreativePromptMulti" || n.mode !== 0) continue;
+        const mode = n.widgets?.find((x) => x.name === "selection_mode")?.value;
+        if (mode !== ONE_PER_ROW) continue;
+        const w = n.widgets?.find((x) => x.name === "prompt_data");
+        let rows = [];
+        try { rows = JSON.parse(w?.value || "[]"); } catch { rows = []; }
+        const on = rows.map((r, i) => (r.enabled && String(r.text || "").trim() ? i : -1)).filter((i) => i >= 0);
+        if (on.length > 1) return { w, rows, on };
+    }
+    return null;
+}
+function hookQueue() {
+    if (app._kreativePromptMultiHooked || typeof app.queuePrompt !== "function") return;
+    const original = app.queuePrompt.bind(app);
+    app.queuePrompt = async function (...args) {
+        const job = pendingRows();
+        if (!job) return original(...args);
+        const { w, rows, on } = job;
+        const saved = w.value;
+        let last;
+        try {
+            for (const i of on) {
+                w.value = JSON.stringify(rows.map((r, k) => ({ ...r, enabled: k === i })));
+                last = await original(...args);
+            }
+        } finally {
+            w.value = saved;
+            app.graph?.setDirtyCanvas(true, true);
+        }
+        return last;
+    };
+    app._kreativePromptMultiHooked = true;
+}
 
 app.registerExtension({
     name: "Kreative2AI.PromptMultiUI",
+
+    async setup() {
+        hookQueue();
+    },
 
     async beforeRegisterNodeDef(nodeType, nodeData) {
         if (nodeData.name !== "KreativePromptMulti") return;

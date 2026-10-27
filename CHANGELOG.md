@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0
+- **KreativePromptMulti**: new selection mode **One image per ON row**. Switch several rows ON and one press of Run queues one run per ON row (each run sees only its own row). Rows are put back afterwards. Skipped when the Kreative Studio MY PROMPT writer is OFF.
+
 ## 0.3.0
 - **KreativeResolutionFocal**: panoramic lenses **XPan 45mm** (65:24) and **Widelux 26mm** (3:1) with `fixed_ratio`: always horizontal, ignore auto ratio and swap.
 - New ratios 65:24 and 3:1; new sizes 2304 and 2560.

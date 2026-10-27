@@ -77,6 +77,7 @@ The lens and ratio tables live in one file, `js/lenses.json`. Edit the wording o
 
 - Each idea box grows with its text and the node resizes itself, so nothing scrolls. Dragging the node taller or shorter snaps it back to fit.
 - **+ Add Idea Row** adds a blank row (or jumps to the blank one already there).
+- **One image per ON row** mode: switch several ideas ON and one press of Run makes one picture per ON idea.
 - **- Remove Selected** removes the idea that is ON (Single Active mode) or the one you last clicked (Combine mode). In Single Active mode the next idea is switched ON, so a run never starts with nothing selected.
 - **Undo** (appears after a removal) restores the last removed idea. Up to 10 steps, cleared when the page reloads.
 - The x on a row still deletes that row. Piles of empty rows at the end collapse to one.
