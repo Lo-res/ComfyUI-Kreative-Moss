@@ -101,6 +101,10 @@ The tests use simulated nodes. They cannot check how the UI looks or how tall ro
 
 Film grain by [comfyui-propost](https://github.com/digitaljohn/comfyui-propost).
 
+## Support
+
+☕ If this saved you time, you can buy me a coffee: [buymeacoffee.com/kreative2.ai](https://buymeacoffee.com/kreative2.ai)
+
 ## Licence
 
 MIT, see `LICENSE`.
